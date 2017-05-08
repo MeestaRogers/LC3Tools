@@ -1,0 +1,19 @@
+{
+    "shell_cmd": "lc3as \"${file}\"",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "working_dir": "${file_path}",
+    "selector": "source.asm, source.ssraw, source.hex, source.bin",
+    "variants":
+    [
+        {
+            "name": "Binary",
+            "selector": "source.bin",
+            "shell_cmd": "cp \"${file}\" \"${file_base_name}.obj\""
+        },
+        {
+            "name": "Hex",
+            "selector": "source.hex",
+            "shell_cmd": "cp \"${file}\" \"${file_base_name}.obj\""
+        }
+    ]
+}
